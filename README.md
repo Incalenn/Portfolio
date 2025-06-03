@@ -39,10 +39,6 @@ This is the source code for my personal portfolio — a creative and technical s
 
 ## 📫 Contact
 
-If you're interested in working together or want to connect:
-
-## 📫 Contact
-
 Feel free to reach out for collaboration, freelance opportunities, or just to connect:
 
 - 📧 **Email:** [van.alenn.pham@gmail.com](mailto:van.alenn.pham@gmail.com)  
