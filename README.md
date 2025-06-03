@@ -4,9 +4,9 @@ This is the source code for my personal portfolio — a creative and technical s
 
 ---
 
-## 🌐 Live Website
+## 🌐 Live Website (Hosted on Vercel)
 
-> 🔗 [Coming soon – hosted version will be deployed here]
+> 🔗 **My Portfolio Website:** [Van Alenn PHAM Portfolio](https://portfolio-mocha-two-mpx6byoiu4.vercel.app/)
 
 ---
 
