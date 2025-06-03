@@ -1,0 +1,660 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: 'Rajdhani', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.container {
+    border: 1px solid #444;
+    margin: 10px;
+    min-height: 95vh;
+    position: relative;
+}
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 320px;
+    height: auto;
+    bottom: 1px;
+    padding: 32px 0 0 32px;
+}
+.sidebar h1 {
+    font-family: 'Rajdhani', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 2.5em;
+    font-weight: 300;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+.sidebar .subtitle {
+    font-size: 1em;
+    color: #bbb;
+    margin-bottom: 32px;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0 0;
+    margin-right: 32px;
+}
+.sidebar ul li {
+    margin: 12px 0;
+    font-size: 1em;
+    color: #eee;
+    cursor: pointer;
+    transition: color 0.2s;
+    position: relative;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+}
+.sidebar ul li .cross {
+    display: none;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.sidebar ul li.active {
+    color: #fff;
+    font-weight: bold;
+}
+body.light-mode .sidebar ul li.active {
+    color: #23252a;
+}
+.sidebar ul li.active .cross {
+    display: inline;
+    color: #fff;
+}
+body.light-mode .sidebar ul li.active .cross {
+    color: #23252a;
+}
+.container .sidebar ul li.active .text {
+    display: none;
+}
+.sidebar ul li .text {
+    display: inline;
+}
+.sidebar ul li:hover {
+    color: #525275;
+    /* text-decoration: underline; */
+}
+.vertical-text {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    color: #888;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    margin-left: 32px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    color: #888;
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+.footer p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+.profile-info {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: #ccc;
+    font-size: 0.95em;
+    line-height: 1.6;
+    max-width: 260px;
+}
+.profile-info-bottom {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    color: #fff;
+    font-size: 1em;
+    text-align: right;
+    max-width: 260px;
+    line-height: 1.6;
+    z-index: 10;
+}
+@media (max-width: 700px) {
+    .sidebar, .profile-info {
+        position: static;
+        width: 100%;
+        text-align: left;
+        padding: 16px;
+        transform: none;
+    }
+    .vertical-text {
+        display: none;
+    }
+}
+.motif-css {
+    display: none;
+}
+@keyframes pulse-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px #fff) drop-shadow(0 0 40px #fff);
+    }
+    50% {
+        filter: drop_shadow(0 0 40px #00eaff) drop_shadow(0 0 80px #00eaff);
+    }
+}
+@keyframes rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg);}
+    100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+.motif-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 80vw;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+    display: block;
+    /* animation: rotate 6s linear infinite, pulse-glow 1.2s infinite alternate; */
+    /* transition: filter 0.2s, transform 0.2s; */
+}
+.motif-logo:hover {
+    /* filter: drop_shadow(0 0 40px #ff0044) drop_shadow(0 0 80px #ff0044); */
+    /* transform: translate(-50%, -50%) scale(1.1) rotate(-5deg); */
+}
+.main-content {
+    position: relative;
+    min-height: 95vh;
+    height: 100%;
+    z-index: 2;
+    margin-left: 320px;
+    width: auto;
+    overflow: hidden;
+}
+.content-section {
+    display: none;
+    color: #fff;
+    font-size: 1.3em;
+    max-width: 600px;
+    text-align: left;
+}
+.content-section.active {
+    display: block;
+}
+.home-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.motif-logo-home {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 400px;
+    max-width: 80vw;
+    height: auto;
+    pointer-events: none;
+    z-index: 5;
+    display: block;
+}
+.content-right {
+    position: relative;
+    right: auto;
+    top: auto;
+    max-width: 700px;
+    text-align: right;
+    color: #fff;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: 40px;
+    padding-top: 50px;
+}
+.project-list {
+    margin-top: 0;
+}
+.project-item {
+    margin-bottom: 30px;
+    padding-bottom: 0;
+    border-bottom: none;
+    transition: opacity 0.2s ease-in-out;
+}
+.project-item:last-child {
+    border-bottom: none;
+}
+.project-item:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+.project-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 2px;
+    font-family: 'Inter', sans-serif;
+}
+.project-subtitle {
+    font-size: 0.9em;
+    color: #bbb;
+    margin: 0;
+}
+.dark-light-toggle {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.toggle-label {
+    color: #bbb;
+    font-size: 1.1em;
+    margin: 0 8px;
+    user-select: none;
+}
+body.light-mode .toggle-label {
+    color: #000;
+}
+.toggle-switch {
+    width: 60px;
+    height: 32px;
+    background: #e3e7eb;
+    border-radius: 16px;
+    position: relative;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+}
+.toggle-knob {
+    width: 24px;
+    height: 24px;
+    background: #23252a;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    transition: left 0.2s, background 0.2s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+body.light-mode .toggle-switch {
+    background: #23252a;
+}
+body.light-mode .toggle-knob {
+    left: 32px;
+    background: #e3e7eb;
+}
+body.light-mode {
+    background: #f5f6fa;
+    color: #23252a;
+}
+body.light-mode .sidebar,
+body.light-mode .container {
+    background: #fff;
+    color: #23252a;
+    border-color: #bbb;
+}
+body.light-mode .sidebar ul li,
+body.light-mode .sidebar .subtitle,
+body.light-mode .vertical-text,
+body.light-mode .footer {
+    color: #23252a;
+}
+body.light-mode .profile-info,
+body.light-mode .profile-info-bottom,
+body.light-mode .content-right {
+    color: #23252a;
+}
+body.light-mode .project-item {
+    border-bottom-color: none;
+}
+body.light-mode .project-title {
+    color: #23252a;
+}
+body.light-mode .project-subtitle {
+    font-size: 0.9em;
+    color: #333;
+    margin: 0;
+}
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    z-index: 9999;
+    transition: opacity 1.0s ease-out;
+    opacity: 1;
+}
+
+.loading-name {
+    font-weight: 700;
+}
+
+.loading-portfolio {
+    font-weight: 300;
+    margin-left: 8px;
+}
+
+#loading-screen.hidden {
+    opacity: 0;
+}
+
+.info-section {
+    margin-top: 20px;
+}
+
+.info-block {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.info-block h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+body.light-mode .info-block h3 {
+     color: #23252a;
+}
+
+.info-block p,
+.info-block ul {
+    font-size: 1em;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+body.light-mode .info-block p,
+body.light-mode .info-block ul {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.info-block p {
+     margin-bottom: 5px;
+}
+
+.info-block p:last-child {
+     margin-bottom: 0;
+}
+
+.info-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-block li {
+    margin-bottom: 12px;
+    line-height: 1.2;
+    font-size: 1em;
+}
+
+ .info-block.recognitions li {
+     text-align: right;
+     line-height: 1.1;
+ }
+
+.info-block li span:first-child {
+     font-weight: 400;
+     display: block;
+     margin-bottom: 0px;
+ }
+
+ .info-block li span:last-child {
+     font-weight: 600;
+     display: block;
+     margin-bottom: 0px;
+ }
+
+.info-block a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+ body.light-mode .info-block a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-block a:hover {
+    color: #fff;
+}
+
+ body.light-mode .info-block a:hover {
+    color: #23252a;
+}
+
+.info-block.recognitions {
+    margin-top: 200px;
+}
+
+.info-block.recognitions p {
+     margin-bottom: 0px;
+}
+
+.info-block.recognitions p:nth-child(odd) {
+     margin-bottom: 5px;
+}
+
+.info-block.social-links {
+    /* Specific styles for social links block if needed */
+}
+
+.info-block h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+body.light-mode .info-block h3 {
+     color: #23252a;
+}
+
+.info-block p,
+.info-block ul {
+    font-size: 1em;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+body.light-mode .info-block p,
+body.light-mode .info-block ul {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.info-block p {
+     margin-bottom: 5px;
+}
+
+.info-block p:last-child {
+     margin-bottom: 0;
+}
+
+.info-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-block li {
+    margin-bottom: 12px;
+    line-height: 1.2;
+    font-size: 1em;
+}
+
+ .info-block.recognitions li {
+     text-align: right;
+ }
+
+.info-block li span:first-child {
+     font-weight: normal;
+     display: block;
+ }
+
+ .info-block li span:last-child {
+     font-weight: bold;
+     display: block;
+ }
+
+.info-block a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+ body.light-mode .info-block a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.info-block a:hover {
+    color: #fff;
+}
+
+ body.light-mode .info-block a:hover {
+    color: #23252a;
+}
+
+.linkedin-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    transition: opacity 0.2s ease;
+}
+
+.linkedin-icon:hover {
+    opacity: 0.8;
+}
+
+#copyright-text {
+    position: fixed;
+    left: 10px;
+    bottom: 0;
+    color: #888;
+    font-size: 0.8em;
+    padding: 0;
+    margin: 0;
+    z-index: 100;
+}
+
+#background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#background-canvas canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-right: 15px;
+    overflow-y: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#content-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#content-container {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Add some basic styling for the FAQ items */
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333; /* Adjust color for light/dark mode if needed */
+}
+
+body.light-mode .faq-item {
+    border-bottom-color: #23252a; /* Black border in light mode */
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #fff; /* Adjust color for light/dark mode if needed */
+}
+
+body.light-mode .faq-item h3 {
+    color: #23252a; /* Black/dark grey in light mode */
+}
+
+.faq-item p,
+.faq-item ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ccc; /* Adjust color for light/dark mode if needed */
+}
+
+body.light-mode .faq-item p,
+body.light-mode .faq-item ul,
+body.light-mode .faq-item ul li {
+    color: #333; /* Dark grey text in light mode */
+}
+
+.faq-item ul {
+    list-style: disc inside;
+    padding-left: 20px;
+}
+
+.faq-item ul li {
+    margin-bottom: 5px;
+}
+
+body.light-mode .faq-item a {
+    color: #23252a; /* Dark link color in light mode */
+} 

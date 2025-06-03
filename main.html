@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Van Alenn PHAM - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="shaders.js"></script>
+</head>
+<body>
+    <div id="loading-screen">
+        <span class="loading-name">Van Alenn PHAM</span>
+        <span class="loading-portfolio">Portfolio</span>
+    </div>
+    <div class="container">
+        <div class="dark-light-toggle" id="darkLightToggle">
+            <span class="toggle-label">DARK</span>
+            <div class="toggle-switch">
+                <div class="toggle-knob"></div>
+            </div>
+            <span class="toggle-label">LIGHT</span>
+        </div>
+        <div class="sidebar">
+            <h1>Van Alenn PHAM</h1>
+            <div class="subtitle">AI & Fullstack Developer</div>
+            <ul id="sidebar-nav">
+                <li data-section="home"><span class="text">Home</span><span class="cross">×</span></li>
+                <li data-section="projects"><span class="text">Projects</span><span class="cross">×</span></li>
+                <li data-section="info"><span class="text">Info</span><span class="cross">×</span></li>
+                <li data-section="contact"><span class="text">Contact</span><span class="cross">×</span></li>
+                <li data-section="faq"><span class="text">FAQ</span><span class="cross">×</span></li>
+            </ul>
+            <div class="vertical-text">PORTFOLIO &nbsp; | &nbsp; 2025 &nbsp; | &nbsp; Van Alenn PHAM</div>
+        </div>
+        <div class="main-content" id="main-content">
+            <div id="background-canvas"></div>
+            <div id="content-container"></div>
+        </div>
+    </div>
+    <span id="copyright-text">© Van Alenn PHAM</span>
+    <script src="script.js"></script>
+</body>
+</html>
